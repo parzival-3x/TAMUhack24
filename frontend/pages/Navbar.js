@@ -1,11 +1,11 @@
 import './App.css';
 
-function App() {
+function Navbar() {
   return (
-    <div className="App">
+    <div className="Navbar">
         <h1>This is the main page</h1>
     </div>
   );
 }
 
-export default App;
+export default Navbar;
