@@ -23,7 +23,10 @@
     "express": "^4.18.2",
     "haversine-distance": "^1.2.1",
     "luxon": "^2.5.2",
+    "react-icons": "^5.0.1",
+    "react-router-dom": "^6.21.3",
     "seedrandom": "^3.0.5",
+    "styled-components": "^6.1.8",
     "winston": "^3.3.3"
   },
   "devDependencies": {
