@@ -1,8 +1,3 @@
-body,
-html {
-  overflow: hidden;
-}
-
 #home-header {
   text-align: center;
   margin: 50px 0;
@@ -12,7 +7,8 @@ html {
   position: relative;
   height: 300px;
   width: 1000px;
-  margin: 0 20px;
+  margin: 0 auto; /* Center the container horizontally */
+  overflow: hidden; /* Ensure the content or animation overflow is hidden */
 }
 
 #plane-img {
@@ -20,8 +16,8 @@ html {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 2; /* Increased z-index value */
-  transition: all 5s ease; /* Adjusted the transition property for a slower fly-off animation */
+  z-index: 2;
+  transition: all 5s ease;
 }
 
 #sky-bg {
@@ -41,7 +37,7 @@ html {
 }
 
 #plane-img.hovering {
-  animation: hoverUpDown 5s infinite; /* Restored the infinite hover animation */
+  animation: hoverUpDown 5s infinite;
 }
 
 #plane-img.fly-off {
