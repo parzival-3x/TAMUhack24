@@ -21,7 +21,7 @@ html {
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 2; /* Increased z-index value */
-  transition: left 5s ease; /* Adjusted the transition property for a slower fly-off animation */
+  transition: all 5s ease; /* Adjusted the transition property for a slower fly-off animation */
 }
 
 #sky-bg {
@@ -46,4 +46,5 @@ html {
 
 #plane-img.fly-off {
   left: 200%; /* Move the image off to the right side beyond the container's width */
+  top: -50%;
 }
