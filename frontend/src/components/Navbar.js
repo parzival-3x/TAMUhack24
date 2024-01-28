@@ -1,12 +1,12 @@
 import React from 'react';
-import { Nav, NavLink, Bars, NavMenu, NavBtn, NavBtnLink } from './NavbarElements';
+import { Nav, NavLink, Bars, NavMenu, NavBtn, NavBtnLink, Logo } from './NavbarElements';
 
 function Navbar() {
   return (
     <>
         <Nav>
           <NavLink to="/">
-            <img src="" alt=""/>
+            <Logo src="..//img/WizardDude.png" alt=""/>
           </NavLink>
           <Bars />
           <NavMenu>
