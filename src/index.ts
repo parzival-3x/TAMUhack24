@@ -10,7 +10,7 @@ const port = env.port || '4000';
 
 const app = express();
 
-app.use(cors());
+// app.use(cors());
 app.use(express.json());
 
 app.get('/', (_: express.Request, res: express.Response) => {

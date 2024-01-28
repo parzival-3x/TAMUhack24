@@ -19,12 +19,11 @@ function Navbar() {
             <NavLink to ="/contact-us" activeStyle>
               Contact
             </NavLink>
-            <NavLink to ="/sign-up" activeStyle>
-              Sign Up
-            </NavLink>
           </NavMenu>
           <NavBtn>
-            <NavBtnLink to='/signin'>Sign In</NavBtnLink>
+            <NavBtnLink to='/sign-in'>
+              Sign In
+            </NavBtnLink>
           </NavBtn>
         </Nav>
     </>

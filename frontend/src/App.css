@@ -47,3 +47,33 @@ html {
 #plane-img.fly-off {
   left: 200%; /* Move the image off to the right side beyond the container's width */
 }
+
+.input {
+  width:100
+}
+
+.input-box {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.buttons {
+  border-radius:4px;
+  background: #256ce1;
+  padding: 7px 22px;
+  margin: 5px;
+  color: #fff;
+  border:none;
+  outline:none;
+  cursor:pointer;
+  transition: all 0.2s ease-in-out;
+  text-decoration: none;
+  
+  &:hover {
+      transition: all 0.2s ease-in-out;
+      background: #fff;
+      color: #010606;
+  }
+}
+
+
