@@ -1,14 +1,14 @@
 import './App.css';
 import Scheduler from './components/Scheduler';
 import Navbar from './components/Navbar';
-import {BrowserRouter as Router} from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 function App() {
   return (
-    <Router>
-    <Navbar />
-  </Router>
     <div className="App">
+      <Router>
+        <Navbar />
+      </Router>
       <h1 id="home-header">
         Find And Book <br />A Magical Experience
       </h1>
