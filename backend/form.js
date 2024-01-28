@@ -31,27 +31,36 @@ function validateAirport(input, message) {
 	if (!hasValue(input)) {
 		return false;
 	}
-  codeURL = apiUrl.concat("/airports?code=",input);
-  fetch(codeURL)
-    .then(response => {
-      if (!response.ok) {
-        if (response.status === 404) {
-          throw new Error('Please enter a valid airport.');
-        } else if (response.status === 500) {
-          throw new Error('Server error');
-        } else {
-          throw new Error('Network response was not ok');
-        }
-      }
-      return response.json();
-    })
-    .then(data => {//do something else
-      outputElement.textContent = JSON.stringify(data, null, 2);
-    })
-    .catch(error => {
-      console.error('Error:', error);
-      return showError(input, message);
-    });
+	codeURL = apiUrl.concat("/airports?code=", input);
+	fetch(codeURL)
+		.then(response => {
+			if (!response.ok) {
+				if (response.status === 404) {
+					throw new Error('Please enter a valid airport.');
+				} else if (response.status === 500) {
+					throw new Error('Server error');
+				} else {
+					throw new Error('Network response was not ok');
+				}
+			}
+			return response.json();
+		})
+		.then(data => {//do something else
+			for (let i = 0; i < jsonData.length; i++) {
+				const flight = jsonData[i];
+				const flightNumber = flight.flightNumber;
+				const originCity = flight.origin.city;
+				const destinationCity = flight.destination.city;
+				const distance = flight.distance;
+				const duration = flight.duration.locale;
+				const departureTime = flight.departureTime;
+				const arrivalTime = flight.arrivalTime;
+			}
+		})
+		.catch(error => {
+			console.error('Error:', error);
+			return showError(input, message);
+		});
 	return true;
 }
 
@@ -65,9 +74,9 @@ form.addEventListener("submit", function (event) {
 
 	// validate the form
 	let originValid = validateAirport(form.elements["start"], AIRPORT_REQUIRED);
-  let endpointValid = validateAirport(form.elements["end"], AIRPORT_REQUIRED);
-  let connectionValid = hasValue(form.elements["connect"]);
-  let leaveValid = hasValue(form.elements["leave"]);
+	let endpointValid = validateAirport(form.elements["end"], AIRPORT_REQUIRED);
+	let connectionValid = hasValue(form.elements["connect"]);
+	let leaveValid = hasValue(form.elements["leave"]);
 	let arriveemailValid = hasValue(form.elements["arrive"]);
 	// if valid, submit the form.
 	if (originValid && endpointValid && connectionValid && leaveValid && arriveemailValid) {
