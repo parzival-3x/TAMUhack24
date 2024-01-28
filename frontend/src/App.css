@@ -1,6 +1,10 @@
+html {
+  overflow-x: hidden;
+}
+
+body,
 #home-header {
   text-align: center;
-  margin: 50px 0;
 }
 
 #hero-img-container {
@@ -9,19 +13,22 @@
   width: 1000px;
   margin: 0 20px;
 }
+
 #plane-img {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 1;
-  transition: transform 0.3s ease; /* Added a smooth transition effect */
+  z-index: 2; /* Increased z-index value */
+  transition: all 5s ease; /* Adjusted the transition property for a slower fly-off animation */
 }
+
 #sky-bg {
   width: 100%;
   height: 100%;
   border-radius: 200px;
 }
+
 @keyframes hoverUpDown {
   0%,
   100% {
@@ -31,6 +38,40 @@
     transform: translate(-50%, -60%);
   }
 }
-#plane-img {
-  animation: hoverUpDown 5s infinite;
+
+#plane-img.hovering {
+  animation: hoverUpDown 5s infinite; /* Restored the infinite hover animation */
+}
+
+#plane-img.fly-off {
+  left: 200%; /* Move the image off to the right side beyond the container's width */
+  top: -50%;
+}
+
+.input {
+  width: 100;
+}
+
+.input-box {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.buttons {
+  border-radius: 4px;
+  background: #256ce1;
+  padding: 7px 22px;
+  margin: 5px;
+  color: #fff;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  text-decoration: none;
+
+  &:hover {
+    transition: all 0.2s ease-in-out;
+    background: #fff;
+    color: #010606;
+  }
 }

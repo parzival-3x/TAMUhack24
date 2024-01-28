@@ -1,24 +1,42 @@
-import './App.css';
+// Home.jsx
+import React, { useState } from 'react';
+import './App.css'; // Import your CSS file
 import Scheduler from './components/Scheduler';
 import Navbar from './components/Navbar';
 
-import React from "react";
-import { BrowserRouter as Router } from 'react-router-dom';
-
 export function Home() {
-    return (
-        <div className="App">
-            <Navbar />
-            <h1 id="home-header">
-                Find And Book <br />A Magical Experience
-            </h1>
-            <div className="d-flex justify-content-center">
-                <div id="hero-img-container">
-                    <img id="sky-bg" src="..//img/sky-background.jpg" alt="sky background" />
-                    <img id="plane-img" src="..//img/plane-transparent.png" alt="" />
-                </div>
-            </div>
-            <Scheduler />
+  const [flyOff, setFlyOff] = useState(false);
+
+  const handlePlaneFlyOff = () => {
+    setFlyOff(true);
+  };
+
+  return (
+    <div className="App">
+      <Navbar />
+      <h1 id="home-header">
+        Find And Book <br />A Magical Experience
+      </h1>
+      <div className="d-flex justify-content-center">
+        <div id="hero-img-container">
+          <img id="sky-bg" src="..//img/sky-background.jpg" alt="sky background" />
+          <img id="plane-img" src="..//img/plane-transparent.png" alt="" className={`flying-image ${flyOff ? 'fly-off' : 'hovering'}`} />
         </div>
-    )
+      </div>
+      <div className="d-flex justify-content-center">
+        <button className="clickable-area" onClick={handlePlaneFlyOff}>
+          TO FREEDOM
+        </button>
+      </div>
+      <Scheduler />
+      <div className="chat-bot" style={{ display: 'flex', justifyContent: 'flex-end', alignItems: 'flex-end' }}>
+        <img
+          id="chat-bot-img"
+          src="..//img/smiling_plane-removebg-preview.png"
+          alt=""
+          className={`flying-image ${flyOff ? 'fly-off' : 'hovering'}`}
+        />
+      </div>
+    </div>
+  );
 }
