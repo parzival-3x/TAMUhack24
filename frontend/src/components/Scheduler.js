@@ -1,4 +1,11 @@
 import './Scheduler.css';
+import {Link} from 'react-router-dom';
+
+import { SubmitBtn } from './Elements';
+
+import { BrowserRouter, Route } from 'react-router-dom';
+
+import Datapage from '../Datapage';
 
 function Scheduler() {
   return (
@@ -13,7 +20,10 @@ function Scheduler() {
               <input type="date" />
               <input type="date" />
               <input type="text" />
-              <button>Submit</button>
+
+              <SubmitBtn to="/datapage">
+                Submit
+              </SubmitBtn>
             </div>
           </div>
         </div>

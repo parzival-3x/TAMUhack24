@@ -81,6 +81,10 @@ export const NavBtnLink = styled(Link)`
     }
 `;
 
+export const SubmitBtn = styled(Link)`
+    
+`;
+
 
 
 
