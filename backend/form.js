@@ -1,3 +1,6 @@
+const apiUrl = 'http://localhost:4000/';
+
+
 // show a message with a type of the input
 function showMessage(input, message, type) {
 	// get the small element and set the message
@@ -28,12 +31,27 @@ function validateAirport(input, message) {
 	if (!hasValue(input)) {
 		return false;
 	}
-  //if /airports?code=<IATA-CODE>
-  // returns 404, return "please enter a valid code"
-	
-	if (!emailRegex.test(email)) {
-		return showError(input, message);
-	}
+  codeURL = apiUrl.concat("/airports?code=",input);
+  fetch(codeURL)
+    .then(response => {
+      if (!response.ok) {
+        if (response.status === 404) {
+          throw new Error('Please enter a valid airport.');
+        } else if (response.status === 500) {
+          throw new Error('Server error');
+        } else {
+          throw new Error('Network response was not ok');
+        }
+      }
+      return response.json();
+    })
+    .then(data => {//do something else
+      outputElement.textContent = JSON.stringify(data, null, 2);
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      return showError(input, message);
+    });
 	return true;
 }
 
