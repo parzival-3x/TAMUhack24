@@ -9,18 +9,33 @@
 		<div class="container">
 			<form action="signup.html" method="post" id="signup">
 				<h1>Sign Up</h1>
-				<div class="field">
-					<label for="name">Name:</label>
-					<input type="text" id="name" name="name" placeholder="Enter your fullname" />
+				<div class="field"><!--origin-->
+					<label for="name">Airport of origin:</label>
+					<input type="text" id="start" name="start" placeholder="Enter your fullname" />
+					<small></small>
+				</div>
+				<div class="field"><!--end point-->
+					<label for="email">Destination airport:</label>
+					<input type="text" id="end" name="end" placeholder="Enter your email address" />
+					<small></small>
+				</div>
+                <div class="field"><!--max connections-->
+					<label for="email">Max # of connections:</label>
+					<input type="text" id="connect" name="connect" placeholder="Enter your email address" />
+					<small></small>
+				</div>
+                <div class="field"><!--preferred leave time-->
+					<label for="email">When do you want to leave (optional):</label>
+					<input type="text" id="leave" name="leave" placeholder="Enter your email address" />
+					<small></small>
+				</div>
+                <div class="field"><!--prefered arrival time-->
+					<label for="email">When do you want to arrive (optional):</label>
+					<input type="text" id="arrive" name="arrive" placeholder="Enter your email address" />
 					<small></small>
 				</div>
 				<div class="field">
-					<label for="email">Email:</label>
-					<input type="text" id="email" name="email" placeholder="Enter your email address" />
-					<small></small>
-				</div>
-				<div class="field">
-					<button type="submit" class="full">Subscribe</button>
+					<button type="submit" class="full">Submit</button>
 				</div>
 			</form>
 		</div>
