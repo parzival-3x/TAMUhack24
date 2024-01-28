@@ -18,7 +18,7 @@ function SignupLoginForm() {
                 <label for="pass">Password</label>
                 <input type='password'></input>
             </div>
-            <div className='input-box'>
+            <div className='input-box login-btns'>
                 <button className = 'buttons'>Log in</button>
                 <button className = 'buttons'>Register</button>
             </div>

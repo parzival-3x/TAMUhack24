@@ -26,7 +26,7 @@ export function Home() {
       <div className="d-flex justify-content-center">
         <button className="clickable-area" onClick={handlePlaneFlyOff}>
           TO FREEDOM
-          {useState()};
+          {useState()}
         </button>
       </div>
       <Scheduler />
